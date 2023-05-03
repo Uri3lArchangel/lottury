@@ -10,7 +10,7 @@ function About() {
         </aside>
         <article>
           After a player has purchased a number tickets, one or more, unique
-          ID's would be assigned to each ticket. After every 24 hours a draw
+          ID&apos;s would be assigned to each ticket. After every 24 hours a draw
           function is called, this function would be called every 24 hours and a
           random number would be generated offchain, this number would be chosen
           as winner and given 90% of the prize pool. In the eventuality that all
