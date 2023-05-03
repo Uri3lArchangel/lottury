@@ -1,0 +1,354 @@
+.Page {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 20;
+}
+.sideNav {
+  position: absolute;
+  z-index: 5;
+  bottom: 5%;
+  height: 85%;
+  width: 20%;
+  border-right: 1px solid #2d80d4;
+  background-color: #1c212d;
+}
+.sideNav ul {
+  list-style: none;
+  width: fit-content;
+  margin: 2em 0;
+}
+.sideNav li {
+  cursor: pointer;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  position: relative;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  width: 40px;
+  align-items: center;
+  height: 40px;
+  justify-content: flex-start;
+  color: transparent;
+  margin: 1em 0;
+}
+.sideNav li p {
+  position: absolute;
+  z-index: 0;
+  right: 10%;
+  font-size: 0.7rem;
+}
+.sideNav li:hover {
+  color: white;
+  background-image: linear-gradient(to right, transparent, 70%, #5b0afd);
+  width: 150px;
+}
+
+.sideNav li a {
+  position: relative;
+  z-index: 3;
+  transition-duration: 0.3s;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: gold;
+  cursor: pointer;
+  color: #1c212d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sideNav li a:hover {
+  background-color: #5b0afd;
+}
+.Header {
+  position: absolute;
+  background-color: #2d3443;
+  border-bottom: 1px solid#666;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  z-index: 5;
+}
+.Header figure {
+  width: 60px;
+  height: 100px;
+  position: absolute;
+  right: 5%;
+  z-index: 10;
+  cursor: pointer;
+}
+.Header img {
+  width: 100%;
+  height: 100%;
+}
+.Header button {
+  /* padding: 0 0.8em; */
+  margin:1em 0.9em;
+  height: 50px;
+  width: 30%;
+  font-size: 0.9rem;
+  border-radius: 15px;
+  border: 0;
+  cursor: pointer;
+}
+.Footer {
+  background-color: #2d3443;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  height: 5%;
+  width: 100%;
+  border-top:  1px solid gold;
+  box-shadow: 2px 2px 20px rgba(255, 217, 0, 0.404);
+}
+.Page main {
+  position: absolute;
+  z-index: 3;
+  top: 10%;
+  height: 85%;
+  width: 87%;
+  left: 13%;
+  display: flex;
+  flex-direction: column;
+}
+.Other {
+  border-top: 1px solid #22ade4;
+  border-right: 1px solid #a67afd;
+  border-bottom: 1px solid #5b0afd;
+  width: 92%;
+  height: 60%;
+  background-color: #1c212de2;
+  overflow-y: scroll;
+  position: relative;
+  left: 8%;
+}
+.Play {
+  position: relative;
+  width: 100%;
+  border: 0;
+  background-color: #1c212de2;
+  color: gold;
+  min-height:40%;
+}
+.Play div {
+  /* font-size: 0.9rem; */
+  text-align: center;
+  top: 8%;
+  width: 90%;
+  position: absolute;
+  right: 1%;
+  padding: 0.7em 0.4em;
+  border-radius: 10px;
+  border: 1px solid;
+}
+.Play input {
+  width: 100%;
+  text-align: center;
+  padding: 0 0.4em;
+  height: 40px;
+  margin: 0.7em 0;
+}
+.Play button {
+  margin: auto;
+  display: block;
+  padding: 0 0.5em;
+  height: 40px;
+  width: 70%;
+  color: gold;
+  background-image: linear-gradient(to right, #a67afd, #6d3de5, #22ade4);
+}
+
+@media screen and (min-width: 601px) {
+  .Page {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 20;
+    background-color: #1c212d;
+  }
+  .sideNav {
+    position: absolute;
+    bottom: 0;
+    height: 15%;
+    width: 100%;
+    background-color: #1c212d;
+    box-shadow: 0;
+
+  }
+  .sideNav ul{
+    display: flex;
+    box-shadow: 0;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+  }.sideNav li{
+    width: 60px;
+    height: 60px;
+    
+  }
+  .sideNav li p{
+    font-size: 1.3rem;
+  }
+  .sideNav li a{
+    width: 60px;
+    height: 60px;
+  }
+  .sideNav li:hover {
+    width: 250px;
+  }
+  .Header {
+    background-color: #2d3443;
+    width: 100%;
+    height: 10%;
+  }.Header button {
+    font-size: 1.2rem;
+    width: 25%;
+  }
+
+  .Footer {
+    background-color: #2d3443;
+    position: absolute;
+    bottom: 15%;
+    box-shadow: 0 0 0;
+    height: 5%;
+    width: 100%;
+  }
+  .Page main {
+    position: absolute;
+    z-index: 3;
+    top: 10%;
+    height: 70%;
+    width: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+  }
+  .Other {
+    background-color: #1c212de2;
+    width: 60%;
+    left: 0;
+    border: 3px solid var(--shade3);
+    height: 100%;
+  }
+  .Play {
+    width: 40%;
+    border-left: 3px solid var(--shade1);
+    border-bottom: 2px solid var(--shade2);
+    border-top: 2px solid var(--shade3);
+    background-color: #1c212de2;
+    height: 100%;
+
+  }
+  .Play div {
+    
+    text-align: center;
+    top: 30%;
+    width: 90%;
+    position: absolute;
+    right: 5%;
+    height: 40%;
+    padding: 2em 0.4em;
+    border-radius: 10px;
+    border: 1px solid gold; 
+  }
+  .Play input {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 0 0.4em;
+    height: 50px;
+    margin: 0.7em 0;
+  }
+  .Play button {
+    margin:4em auto;
+    display: block;
+    padding: 0 0.5em;
+    height: 40px;
+    border-radius: 10px;
+    width: 70%;
+    color: gold;
+    background-image: linear-gradient(to right, #a67afd, #6d3de5, #22ade4);
+  }
+  
+}
+@media screen and (min-width: 1280px) {
+  .Page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+  }
+  .sideNav {
+    position: absolute;
+    bottom: 5%;
+    height: 85%;
+    width: 20%;
+    background-color: #1c212d;
+  }
+  .sideNav ul{
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+  }.sideNav li{
+    width: 80px;
+    height: 80px;
+    
+  }
+  .sideNav li p{
+    font-size: 1.5rem;
+  }
+  .sideNav li a{
+    width: 80px;
+    height: 80px;
+  }
+  .sideNav li:hover {
+    width: 250px;
+  }
+  .Header {
+    background-color: #2d3443;
+    width: 100%;
+    height: 10%;
+  }.Header button {
+    font-size: 1.6rem;
+    width: 20%;
+  }
+
+  .Footer {
+    background-color: #2d3443;
+    position: absolute;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+  }
+  .Page main {
+    position: absolute;
+    z-index: 3;
+    top: 10%;
+    height: 85%;
+    width: 80%;
+    left: 20%;
+    display: flex;
+  }
+  .Other {
+    background-color: #1c212de2;
+    width: 60%;
+    height: 100%;
+  }
+  .Play {
+    width: 40%;
+    background-color: #1c212de2;
+    height: 100%;
+    
+  }.Page input{
+    height: 60px;
+    font-size: 1.6rem;
+  }.Page aside{
+    font-size: 1.8rem;
+  }
+}

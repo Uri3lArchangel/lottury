@@ -1,0 +1,84 @@
+.Stats {
+  position: absolute;
+  top: 210%;
+  height: 100%;
+  width: 98%;
+  right: 1%;
+  color: white;
+}
+
+.Container {
+  text-align: center;
+  margin-top: 3em;
+  display: grid;
+  height: 80%;
+  grid-template-areas:
+    "prize  address  address"
+    "prize  address  address"
+    "prize  tickets  tickets"
+    "prize  tickets  tickets";
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.pot {
+  padding: 0.3em;
+  grid-area: prize;
+  border: 1px solid gold;
+}
+.pot h4 {
+  margin-top: 3em;
+  font-size: 1.4rem;
+}
+.pot p {
+  font-size: 1.3rem;
+}
+.part h4 {
+  margin-top: 1em;
+  font-size: 1.1rem;
+}
+.part p {
+  font-size: 1rem;
+  line-break: anywhere;
+}
+.part {
+  padding: 0.3em;
+  grid-area: address;
+  border: 1px solid gold;
+}
+.tickets {
+  padding: 0.3em;
+  border: 1px solid gold;
+  grid-area: tickets;
+}
+
+@media screen and (min-width: 601px) {
+  .Container {
+    grid-template-areas:
+      "prize  prize  prize prize"
+      "prize  prize  prize prize"
+      "address  address  tickets tickets"
+      "address  address  tickets tickets";
+    height: 60%;
+  }
+
+  .pot h4 {
+    font-size: 2.5rem;
+  }
+  .pot p {
+    font-size: 2rem;
+  }
+  .part h4 {
+    font-size: 1rem;
+    margin-top: 1.7em;
+  }
+  .part p {
+    font-size: 1.6rem;
+  }
+  .tickets h4 {
+    font-size: 1em;
+    margin-top: 2.7em;
+  }
+  .tickets p {
+    font-size: 1.9rem;
+  }
+}

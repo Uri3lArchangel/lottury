@@ -1,0 +1,38 @@
+.About {
+  position: absolute;
+  margin-top: 2em;
+  top: 300%;
+  height: 100%;
+  text-align: center;
+  color: white;
+}
+.About > div {
+  margin-top: 3em;
+}
+.About h1 {
+  color: red;
+}
+.About article{
+    font-size: 0.8rem;
+    line-break: anywhere;
+}
+@media screen and (min-width: 601px) {
+.About h1{
+  font-size: 2rem;
+}.About article{
+  padding: 0.5em 0.2em;
+  line-height: 45px;
+  font-size: 1.5rem;
+}
+}
+@media screen and (min-width: 1280px) {
+  .About h1{
+    font-size: 2.3rem;
+  }
+  .About article{
+    padding: 0.5em 0.2em;
+    line-height: 65px;
+    font-size: 1.8rem;
+  }
+
+}

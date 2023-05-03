@@ -1,0 +1,19 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+:root{
+  --shade1:#22ade4;
+  --shade2:#a67afd;
+  --shade3:#5b0afd;
+  --shade1-dark:#1c212d;
+}
+@font-face {
+  font-family: cabestro;
+  src: url(../public/fonts/cabestro.ttf);
+}
+.active{
+  background-color: #5b0afd !important
+}
