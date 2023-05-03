@@ -11,7 +11,7 @@ const CarouselApp: React.FC = () => {
   };
 
   return (
-    <Carousel style={{position:'absolute',height:'100vh',width:'100%',top:'0',zIndex:'1'}}>
+    <Carousel autoplay style={{position:'absolute',height:'100vh',width:'100%',top:'0',zIndex:'1'}}>
       <div className={carousel.Container1}>
         <h3 >1</h3>
       </div>
