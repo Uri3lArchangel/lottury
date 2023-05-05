@@ -26,6 +26,12 @@ export interface Props {
   timeLeft?:number;
   timerapi?:string
 }
+declare global{
+  interface Window{
+    ethereum:any
+  }
+}
+ 
 function Index({
   prizePot,
   ticketCount,
