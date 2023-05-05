@@ -30,7 +30,7 @@ declare global{
   }
 }
  
-function index({
+function Index({
   prizePot,
   ticketCount,
   playersCount,
@@ -70,7 +70,7 @@ function index({
   );
 }
 
-export default index;
+export default Index;
 
 export const getServerSideProps = async () => {
   let prizePot = await fecthPrizePot();
