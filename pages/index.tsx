@@ -11,10 +11,8 @@ import Home from "@/src/FE/components/Home";
 import HowToPlay from "@/src/FE/components/HowToPlay";
 import Stats from "@/src/FE/components/Stats";
 import Layout from "@/src/FE/components/layouts/Layout";
-import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Web3 from "web3";
 
 export interface Props {
   prizePot?: number;
@@ -74,7 +72,7 @@ function Index({
 
 export default Index;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps = async () => {
   let prizePot = await fecthPrizePot();
   let ticketCount = await totalTicketsBought();
   let playersCount = await totalPlayers();
@@ -104,8 +102,7 @@ export const getStaticProps: GetStaticProps = async () => {
       timeLeft,
       timerapi
       
-    },
-    revalidate: 20,
+    }
   };
 };
 
