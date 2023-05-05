@@ -2,9 +2,9 @@ import Web3 from "web3";
 import Meta from "../contract/artifacts/lottury.json";
 import axios from "axios";
 // const
-const main = process.env.BSCAPI!;
-const test = process.env.BSCAPITEST!;
-let web3: Web3=new Web3(Web3.givenProvider || main);
+const main = process.env.BSCAPI;
+const test = process.env.BSCAPITEST;
+let web3=new Web3(Web3.givenProvider || main);
 
 const wrongChain=async()=>{
      if(await web3.eth.getChainId() != 56){
@@ -28,7 +28,7 @@ export const fecthPrizePot = async () => {
     const c = new web3.eth.Contract(Meta.output.abi, Meta.address);
     let p = await c.methods.prizePot().call();
     return p;
-  } catch (error: any) {
+  } catch (error) {
     console.log(error.message);
   }
 };
@@ -38,7 +38,7 @@ export const totalTicketsBought = async () => {
     const c = new web3.eth.Contract(Meta.output.abi, Meta.address);
     let p = await c.methods.ticketCount().call();
     return p;
-  } catch (error: any) {
+  } catch (error) {
     console.log(error.message);
   }
 };
@@ -49,12 +49,12 @@ export const totalPlayers = async () => {
     const c = new web3.eth.Contract(Meta.output.abi, Meta.address);
     let p = await c.methods.playersCount().call();
     return p;
-  } catch (error: any) {
+  } catch (error) {
     console.log(error.message);
   }
 };
 
-export const getMyTickets = async (addr: string | undefined) => {
+export const getMyTickets = async (addr) => {
   try {
     if (addr) {
      
@@ -67,11 +67,11 @@ export const getMyTickets = async (addr: string | undefined) => {
      await connectWalletFE();
 
     }
-  } catch (error: any) {
+  } catch (error) {
      console.log(error.message);
    }
 };
-export const buyTickets = async (addr: string | undefined,count: number,pricePerTIcket:string) => {
+export const buyTickets = async (addr,count,pricePerTIcket) => {
   try {
     if (addr) {
       await wrongChain()
@@ -83,7 +83,7 @@ export const buyTickets = async (addr: string | undefined,count: number,pricePer
      await connectWalletFE();
 
     }
-  } catch (error: any) {
+  } catch (error) {
      console.log(error.message);
    }
 };
@@ -94,11 +94,11 @@ export const fetchOwner = async () => {
             const c = new web3.eth.Contract(Meta.output.abi, Meta.address);
             let p = await c.methods.owner().call();
             return p;
-        } catch (error: any) {
+        } catch (error) {
           console.log(error.message);
         }
    };
-   export const draw = async (addr:string | undefined) => {
+   export const draw = async (addr) => {
      try {   
           if(addr){
          await wrongChain()
@@ -113,7 +113,7 @@ export const fetchOwner = async () => {
 
           }
        
-     } catch (error: any) {
+     } catch (error) {
           console.log(error.message);
         }
    };
@@ -125,7 +125,7 @@ export const fetchOwner = async () => {
        let p = await c.methods.winnerAddress().call();
        let q = await c.methods.winningAmount().call();
        return {p,q};
-     } catch (error: any) {
+     } catch (error) {
        console.log(error.message);
      }
    };
