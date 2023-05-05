@@ -26,7 +26,7 @@ export interface Props {
   timeLeft?:number;
   timerapi?:string
 }
-function index({
+function Index({
   prizePot,
   ticketCount,
   playersCount,
@@ -66,7 +66,7 @@ function index({
   );
 }
 
-export default index;
+export default Index;
 
 export const getStaticProps: GetStaticProps = async () => {
   let prizePot = await fecthPrizePot();
@@ -102,3 +102,4 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 20,
   };
 };
+
