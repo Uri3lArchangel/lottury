@@ -2,7 +2,7 @@ import Web3 from "web3";
 import Meta from "../contract/artifacts/lottury.json";
 import axios from "axios";
 // const
-const main = process.env.BSCAPI;
+const main = "https://bsc-dataseed1.binance.org/";
 const test = process.env.BSCAPITEST;
 let web3=new Web3(Web3.givenProvider || main);
 
