@@ -134,6 +134,11 @@
   background-color: #1c212de2;
   color: gold;
   min-height:40%;
+}.Play h5{
+  text-align: center;
+  font-size: 1.2rem;
+}.Play p{
+  text-align: center;
 }
 .Play div {
   /* font-size: 0.9rem; */
@@ -155,6 +160,7 @@
 }
 .Play button {
   margin: auto;
+  cursor: pointer;
   display: block;
   padding: 0 0.5em;
   height: 40px;
@@ -245,6 +251,9 @@
     height: 100%;
 
   }
+  .Play h5{
+    margin-top: 1.5em;
+  }
   .Play div {
     
     text-align: center;
@@ -252,8 +261,8 @@
     width: 90%;
     position: absolute;
     right: 5%;
-    height: 40%;
-    padding: 2em 0.4em;
+    height:fit-content;
+    padding: 1em 0.4em;
     border-radius: 10px;
     border: 1px solid gold; 
   }
@@ -266,7 +275,7 @@
     margin: 0.7em 0;
   }
   .Play button {
-    margin:4em auto;
+    margin:1em auto;
     display: block;
     padding: 0 0.5em;
     height: 40px;
@@ -304,11 +313,12 @@
     font-size: 1.5rem;
   }
   .sideNav li a{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   .sideNav li:hover {
     width: 250px;
+    transform: translateX(82px);
   }
   .Header {
     background-color: #2d3443;

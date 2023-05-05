@@ -2,11 +2,13 @@ import React from 'react'
 import htp from '../../../styles/htp.module.css'
 import StepsApp from './StepsApp'
 
-
-function HowToPlay() {
+interface htpProps{
+  address:string | undefined
+}
+function HowToPlay({address}:htpProps) {
   return (
     <article className={htp.HTP} id='howtoplay'>
-        <StepsApp />
+        <StepsApp address={address} />
     </article>
   )
 }
