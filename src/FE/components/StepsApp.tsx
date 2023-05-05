@@ -2,6 +2,7 @@ import React, { CSSProperties, useEffect, useState } from "react";
 import { Button, Steps } from "antd";
 import htp from "../../../styles/htp.module.css";
 import Web3 from "web3";
+import { connectWalletFE } from "@/src/BE/wallet/web3Functions";
 
 const titleStyles: CSSProperties = {
   fontSize: "1.1rem",
@@ -77,7 +78,7 @@ interface props{
 function Step2({address}:props) {
   return (
     <div>
-     {address? <></>:<Button>Connect Wallet </Button>}
+     {address? <></>:<Button onClick={connectWalletFE}>Connect Wallet </Button>}
     </div>
   );
 }
