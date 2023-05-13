@@ -75,8 +75,8 @@
   z-index: 5;
 }
 .Header figure {
-  width: 60px;
-  height: 100px;
+  width: 100px;
+  height: 140px;
   position: absolute;
   right: 5%;
   z-index: 10;
