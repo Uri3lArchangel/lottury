@@ -9,8 +9,9 @@ let web3=new Web3(Web3.givenProvider || main);
 const wrongChain=async()=>{
      if(await web3.eth.getChainId() != 56){
           alert("You are on the wrong network, please switch to BSC")
-          return
+          return false
      }
+     return true
 }
 export const connectWalletFE = async () => {
   try {
@@ -98,20 +99,32 @@ export const fetchOwner = async () => {
           console.log(error.message);
         }
    };
-   export const draw = async (addr) => {
+   export const draw = async (addr,key) => {
      try {   
           if(addr){
-         await wrongChain()
-
-        let random= await axios.get("https://www.randomnumberapi.com/api/v1.0/random?min=100000000000000&max=1000000000000000&count=1")
-        console.log(random.data[0])
+        if( await wrongChain()){
+          const data={
+            "jsonrpc": "2.0",
+            "method": "generateIntegers",
+            "params": {
+                "apiKey": key,
+                "n": 1,
+                "min": 1,
+                "max": 2000000000,
+                "replacement": true
+            },
+            "id": 42
+        }
+        let random= await axios.post("https://api.random.org/json-rpc/4/invoke",data)
+        console.log(random.result.data[0])
          const c = new web3.eth.Contract(Meta.output.abi, Meta.address);
-         let p = await c.methods.draw(random.data[0]).send({from:addr});
+         let p = await c.methods.draw(random.result.data[0]).send({from:addr});
          return p;
           }else{
                await connectWalletFE();
 
           }
+        }
        
      } catch (error) {
           console.log(error.message);

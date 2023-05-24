@@ -1,0 +1,14 @@
+{
+    "name": "Lottury",
+    "short_name": "Lottury",
+    "start_url": ".",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "/public/lotterylogo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+  

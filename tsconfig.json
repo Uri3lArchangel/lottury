@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/BE/wallet/web3Functions.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/BE/wallet/web3Functions.js", "src/FE/components/Home.tsx", "src/FE/components/AddToHome.jsx"],
   "exclude": ["node_modules"]
 }

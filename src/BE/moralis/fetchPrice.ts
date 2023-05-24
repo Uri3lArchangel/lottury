@@ -9,15 +9,14 @@ export const fetchPrice = async (apikey:string) => {
   });
 }
 
-  const address = "0xB8c77482e45F1F44dE1745F52C74426C631bDD52";
+  const address = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 
-  const chain = EvmChain.ETHEREUM;
+  const chain = EvmChain.BSC;
 
   const response = await Moralis.EvmApi.token.getTokenPrice({
     address,
     chain,
   });
 
-//   console.log(response.toJSON());
-  return (response.raw.usdPrice - 600)
+  return (response.raw.usdPrice)
 }

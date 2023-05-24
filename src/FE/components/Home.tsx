@@ -8,11 +8,12 @@ interface homeProps{
   addr:string | undefined
   owner:string | undefined
   timeLeft?:number;
-  timerapi?:string
+  timerapi?:string;
+  randapikey?:string
 }
 
 
-function Home({addr,owner,timeLeft,timerapi}:homeProps) {
+function Home({addr,owner,timeLeft,timerapi,randapikey}:homeProps) {
   const router = useRouter()
   function formatTime(seconds:number) {
     const hours = Math.floor(seconds / 3600);
@@ -38,9 +39,10 @@ function Home({addr,owner,timeLeft,timerapi}:homeProps) {
   }
 
 
-  const drawFunction = async ()=>{
+  const drawFunction = async (e:React.MouseEvent<HTMLButtonElement>)=>{
     try {
-      await draw(addr)
+      e.preventDefault()
+      await draw(addr,randapikey)
       localStorage.setItem('opened','undefined')
       await fetch((timerapi!+"86400"),{mode:'no-cors'})
       router.reload()
@@ -75,7 +77,7 @@ return()=>{
         <h1>
            The Blockchain Lottery System
         </h1>
-        {addr == owner?<button onClick={drawFunction} style={{width:"40%",height:'60px',cursor:'pointer'}}>Draw</button>:<></>}
+        {addr === owner?<button onClick={drawFunction} style={{width:"40%",height:'60px',cursor:'pointer'}}>Draw</button>:<></>}
         <p>buy, play, win big</p>
         <h2>Time Left: {time}</h2>
         <Link href={'#howtoplay'} onClick={onClickScroll}> <h4> Learn how to play <HiChevronDoubleDown  size={27}/></h4></Link>

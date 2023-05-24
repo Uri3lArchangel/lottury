@@ -130,20 +130,21 @@
 .Play {
   position: relative;
   width: 100%;
+  overflow-y: scroll;
   border: 0;
   background-color: #1c212de2;
   color: gold;
   min-height:40%;
 }.Play h5{
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }.Play p{
   text-align: center;
 }
 .Play div {
   /* font-size: 0.9rem; */
   text-align: center;
-  top: 8%;
+  top: 15%;
   width: 90%;
   position: absolute;
   right: 1%;
@@ -328,7 +329,10 @@
     font-size: 1.6rem;
     width: 20%;
   }
-
+  .Header figure {
+    width: 140px;
+    height: 200px;
+  }
   .Footer {
     background-color: #2d3443;
     position: absolute;

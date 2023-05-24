@@ -22,7 +22,8 @@ export interface Props {
   owner?: string;
   winnerDetails?: { p: string; q: string };
   timeLeft?:number;
-  timerapi?:string
+  timerapi?:string;
+  randapikey?:string;
 }
 declare global{
   interface Window{
@@ -38,7 +39,7 @@ function Index({
   owner,
   winnerDetails,
   timeLeft,
-  timerapi
+  timerapi,randapikey
 }: Props) {
   const router = useRouter();
   const [address, setAddress] = useState<string>();
@@ -57,7 +58,7 @@ function Index({
   return (
     <Layout apikey={apikey} winnerDetails={winnerDetails} address={address}>
       <div>
-        <Home timerapi={timerapi} timeLeft={timeLeft} owner={owner} addr={address} />
+        <Home randapikey={randapikey} timerapi={timerapi} timeLeft={timeLeft} owner={owner} addr={address} />
         <HowToPlay address={address} />
         <Stats
           prizePot={prizePot}
@@ -77,6 +78,7 @@ export const getServerSideProps = async () => {
   let ticketCount = await totalTicketsBought();
   let playersCount = await totalPlayers();
   let apikey = process.env.MORALISAPI;
+  const randapikey = process.env.RANDOMKEY!
   let owner = await fetchOwner();
   const timerapi =process.env.TIMERAPI!
   let winnerDetails = await fetchWinnerAndAmount();
@@ -100,7 +102,8 @@ export const getServerSideProps = async () => {
       owner,
       winnerDetails,
       timeLeft,
-      timerapi
+      timerapi,
+      randapikey
       
     }
   };
