@@ -18,10 +18,13 @@ Install all all dependencies:
 ```npm i ```
 or
 ```npm install```
-Add enviromental variables:
+Add enviromental variables
+
 1. create a file in your project root directory named `.env.local`
 2. add the following lines:
-```TIMERAPI="https://timercheck.io/{ANY_UNIQUE_KEY_OF_YOUR_CHOICE}"
+```
+TIMERAPI="https://timercheck.io/{ANY_UNIQUE_KEY_OF_YOUR_CHOICE}"
+
 MORALISAPI="{MORALIS_API_KEY}"
 ```
   The unique key used in the timerapi must be a complex one to ensure no one can mess up your timer by reseting it sending requests using your key.
